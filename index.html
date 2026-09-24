@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darren Jason Moniaga - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --accent: #0f172a;
+            --card-bg: #ffffff;
+            --border: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3b82f6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Formatting */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        /* Core Competencies */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .tech-stack {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            background: #f1f5f9;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 40px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .experience-date {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .experience-list {
+            list-style-position: inside;
+            color: var(--text-muted);
+        }
+
+        .experience-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card-bg);
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .experience-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero container">
+        <h1>Darren Jason Moniaga</h1>
+        <h2>Statistic Based Engineer</h2>
+        <p>Highly motivated Computer Science and Statistics student at BINUS University and alumnus of BPK Penabur Gading Serpong. Equipped with extensive organizational experience that demonstrates a strong commitment to rigorous hard work, adaptability, and exceptional teamwork.</p>
+    </header>
+
+    <!-- Core Competencies -->
+    <section class="container" id="skills">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Logical Coding & Web Dev</h3>
+                <p>HTML/CSS, JavaScript, Laravel, PHP.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Data & Analytics</h3>
+                <p>RStudio, Python, PySpark, Statistical Modeling (PCA, ANOVA).</p>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Design</h3>
+                <p>Figma, Git/GitHub, Database Management.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Soft Skills</h3>
+                <p>Public Speaking, Event Coordination, Bilingual Communication.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="container" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>JCI Drone Technology Website Prototype</h3>
+                <div class="tech-stack">Figma, UI/UX Design</div>
+                <p>Perancangan antarmuka responsif dan prototipe komprehensif untuk perusahaan teknologi drone, mencakup halaman etalase produk, forum komunitas, dan sistem toko.</p>
+                <a href="https://www.figma.com/design/PRIOqsmsE75SiczfS5Oipj?node-id=0-1" target="_blank" class="project-link">View Design <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Validating and Mitigating Security Vulnerabilities in AI-Generated Code</h3>
+                <div class="tech-stack">Python, RStudio</div>
+                <p>Merancang dan mengimplementasikan framework proaktif berbasis DevSecOps untuk mengamankan penggunaan Large Language Models (LLMs) dalam siklus pengembangan perangkat lunak (SDLC). Riset ini menggabungkan SAST dan secure prompt engineering berstandar OWASP. Berhasil menekan kerentanan hingga 91,84% dan mencapai F1-Score 0.902.</p>
+                <a href="https://docs.google.com/document/d/1XR-X9_Kv_H4wHKO_hwljEtkfPZg6zsj1VGAAVW2enME/edit?usp=sharing" target="_blank" class="project-link">Read Paper <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Analysis of Determining Factors of Electric Car Efficiency: Robust Regression</h3>
+                <div class="tech-stack">RStudio, Python</div>
+                <p>Analisis statistik terhadap 351 model Kendaraan Listrik (EV) menggunakan Multiple Linear Regression (MLR), Log-Linear transformations, dan estimasi HAC. Riset mengungkap fenomena "Battery Weight Penalty" dan memberikan kerangka kerja strategis bagi pembuat kebijakan.</p>
+                <a href="https://docs.google.com/document/d/1uTo3A0DPh2Wy2iBiO7dfKxz-kYbXVA68f9cPFasUgzg/edit?usp=sharing" target="_blank" class="project-link">Read Research <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <h3>Charity Portal & Donation Directory</h3>
+                <div class="tech-stack">Laravel, PHP, Database</div>
+                <p>Pengembangan aplikasi web direktori donasi dengan fitur klasifikasi tujuan amal (Explore Causes) untuk mempermudah distribusi bantuan.</p>
+                <a href="https://binusianorg-my.sharepoint.com/:w:/r/personal/ricardo_rinzi_binus_ac_id/_layouts/15/Doc.aspx?sourcedoc=%7B79D7F2E8-94BE-476D-B384-A12AF66A888C%7D&file=Kelompok7_FinalReport.docx&action=default&mobileredirect=true&wdOrigin=SHAREPOINT.SHELL%2CAPPHOME-WEB.FILEBROWSER.RECENT&wdPreviousSession=b25b591b-9649-4531-94cb-c5a7c4d8ad8a&wdPreviousSessionSrc=AppHomeWeb&ct=1790281024561" target="_blank" class="project-link">View Documentation <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="container" id="experience">
+        <h2 class="section-title">Organization Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>Himpunan Statistika (HIMSTAT) - BINUS</h3>
+                <span class="experience-date">June 2025 - May 2026</span>
+            </div>
+            <ul class="experience-list">
+                <li><strong>Creative/Visual Designer:</strong> Designed and developed visual assets for the Statistics Student Association.</li>
+                <li><strong>Committee & Team Member:</strong> Student Creativity Program for Community Service (PKM-PM) (2025 and 2026).</li>
+                <li><strong>Committee Member:</strong> SPSS (Statistics Olympiad) (2025 and 2026).</li>
+                <li><strong>Committee Member:</strong> MATIC (Mathematics Olympiad) (2025).</li>
+                <li><strong>Volunteer:</strong> SDGs 13: Climate Action Campaign at Wihara Ekayana Arama.</li>
+                <li><strong>Facilitator / Speaker:</strong> "Instilling Anti-Corruption Values" educational program for students at SD Negeri Palmerah 19 Pagi.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>Basketball Experience - Penabur Gading Serpong</h3>
+                <span class="experience-date">January 2019 - December 2023</span>
+            </div>
+            <ul class="experience-list">
+                <li>Varsity Basketball Player, SMPK & SMAK BPK Penabur Gading Serpong.</li>
+                <li>1st Place / Champion, Tangerang Regency Basketball Championship.</li>
+                <li>1st Place / Champion, Banten Provincial Basketball Championship.</li>
+                <li>Core Roster, Banten Provincial Basketball Team.</li>
+                <li>DBL (Developmental Basketball League) Player, BPK Penabur Gading Serpong (2022–2023).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="container" id="contact">
+        <h2 class="section-title">Contact & Connect</h2>
+        <div class="contact-links">
+            <a href="mailto:darrenmoniaga11@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/darren-jason-moniaga-0aa261289?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://instagram.com/darrenjason_" target="_blank"><i class="fab fa-instagram"></i> @darrenjason_</a>
+            <a href="https://line.me/ti/p/~darren_32" target="_blank"><i class="fab fa-line"></i> darren_32</a>
+        </div>
+    </section>
+
+</body>
+</html>
