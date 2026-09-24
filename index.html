@@ -62,10 +62,20 @@
             color: var(--accent);
         }
 
-        /* Hero Section */
+        /* Hero Section (Diperbarui untuk Profil Image) */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .hero h1 {
@@ -170,9 +180,25 @@
             font-size: 0.95rem;
         }
 
-        /* Experience */
-        .experience-item {
+        /* Experience (Diperbarui untuk Gambar) */
+        .experience-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden; /* Agar gambar tidak keluar dari sudut membulat */
             margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .experience-img {
+            width: 100%;
+            height: 300px; /* Tinggi gambar bisa disesuaikan */
+            object-fit: cover;
+            object-position: center 20%; /* Menyesuaikan posisi gambar (untuk foto basket agak dinaikkan) */
+        }
+
+        .experience-content {
+            padding: 30px;
         }
 
         .experience-header {
@@ -225,6 +251,7 @@
             .hero h1 { font-size: 2.5rem; }
             .hero h2 { font-size: 1.2rem; }
             .experience-header { flex-direction: column; }
+            .experience-img { height: 200px; }
         }
     </style>
 </head>
@@ -232,6 +259,9 @@
 
     <!-- Hero Section -->
     <header class="hero container">
+        <!-- Tambahan Foto Profil -->
+        <img src="profile.jpg" alt="Darren Jason Moniaga" class="profile-img">
+        
         <h1>Darren Jason Moniaga</h1>
         <h2>Statistic Based Engineer</h2>
         <p>Highly motivated Computer Science and Statistics student at BINUS University and alumnus of BPK Penabur Gading Serpong. Equipped with extensive organizational experience that demonstrates a strong commitment to rigorous hard work, adaptability, and exceptional teamwork.</p>
@@ -304,33 +334,41 @@
     <section class="container" id="experience">
         <h2 class="section-title">Organization Experience</h2>
         
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>Himpunan Statistika (HIMSTAT) - BINUS</h3>
-                <span class="experience-date">June 2025 - May 2026</span>
+        <!-- HIMSTAT Experience dengan Gambar -->
+        <div class="experience-card">
+            <img src="himstat.jpg" alt="HIMSTAT BINUS Team" class="experience-img">
+            <div class="experience-content">
+                <div class="experience-header">
+                    <h3>Himpunan Statistika (HIMSTAT) - BINUS</h3>
+                    <span class="experience-date">June 2025 - May 2026</span>
+                </div>
+                <ul class="experience-list">
+                    <li><strong>Creative/Visual Designer:</strong> Designed and developed visual assets for the Statistics Student Association.</li>
+                    <li><strong>Committee & Team Member:</strong> Student Creativity Program for Community Service (PKM-PM) (2025 and 2026).</li>
+                    <li><strong>Committee Member:</strong> SPSS (Statistics Olympiad) (2025 and 2026).</li>
+                    <li><strong>Committee Member:</strong> MATIC (Mathematics Olympiad) (2025).</li>
+                    <li><strong>Volunteer:</strong> SDGs 13: Climate Action Campaign at Wihara Ekayana Arama.</li>
+                    <li><strong>Facilitator / Speaker:</strong> "Instilling Anti-Corruption Values" educational program for students at SD Negeri Palmerah 19 Pagi.</li>
+                </ul>
             </div>
-            <ul class="experience-list">
-                <li><strong>Creative/Visual Designer:</strong> Designed and developed visual assets for the Statistics Student Association.</li>
-                <li><strong>Committee & Team Member:</strong> Student Creativity Program for Community Service (PKM-PM) (2025 and 2026).</li>
-                <li><strong>Committee Member:</strong> SPSS (Statistics Olympiad) (2025 and 2026).</li>
-                <li><strong>Committee Member:</strong> MATIC (Mathematics Olympiad) (2025).</li>
-                <li><strong>Volunteer:</strong> SDGs 13: Climate Action Campaign at Wihara Ekayana Arama.</li>
-                <li><strong>Facilitator / Speaker:</strong> "Instilling Anti-Corruption Values" educational program for students at SD Negeri Palmerah 19 Pagi.</li>
-            </ul>
         </div>
 
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>Basketball Experience - Penabur Gading Serpong</h3>
-                <span class="experience-date">January 2019 - December 2023</span>
+        <!-- Basketball Experience dengan Gambar -->
+        <div class="experience-card">
+            <img src="basket.jpg" alt="Basketball Team Penabur Gading Serpong" class="experience-img">
+            <div class="experience-content">
+                <div class="experience-header">
+                    <h3>Basketball Experience - Penabur Gading Serpong</h3>
+                    <span class="experience-date">January 2019 - December 2023</span>
+                </div>
+                <ul class="experience-list">
+                    <li>Varsity Basketball Player, SMPK & SMAK BPK Penabur Gading Serpong.</li>
+                    <li>1st Place / Champion, Tangerang Regency Basketball Championship.</li>
+                    <li>1st Place / Champion, Banten Provincial Basketball Championship.</li>
+                    <li>Core Roster, Banten Provincial Basketball Team.</li>
+                    <li>DBL (Developmental Basketball League) Player, BPK Penabur Gading Serpong (2022–2023).</li>
+                </ul>
             </div>
-            <ul class="experience-list">
-                <li>Varsity Basketball Player, SMPK & SMAK BPK Penabur Gading Serpong.</li>
-                <li>1st Place / Champion, Tangerang Regency Basketball Championship.</li>
-                <li>1st Place / Champion, Banten Provincial Basketball Championship.</li>
-                <li>Core Roster, Banten Provincial Basketball Team.</li>
-                <li>DBL (Developmental Basketball League) Player, BPK Penabur Gading Serpong (2022–2023).</li>
-            </ul>
         </div>
     </section>
 
